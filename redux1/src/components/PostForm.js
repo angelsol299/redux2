@@ -3,9 +3,7 @@ import React, { Component } from "react";
 class PostForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      posts: []
-    };
+    this.state = {};
   }
   render() {
     return (
