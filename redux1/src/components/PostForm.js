@@ -9,6 +9,12 @@ class PostForm extends Component {
     return (
       <div>
         <h1>Add Post</h1>
+        <form>
+          <div>
+            <label>Title: </label>
+            <input type="text" />
+          </div>
+        </form>
       </div>
     );
   }
