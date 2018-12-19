@@ -12,10 +12,13 @@ class PostForm extends Component {
         <form>
           <div>
             <label>Title: </label>
+            <br />
             <input type="text" />
           </div>
+          <br />
           <div>
             <label>Body: </label>
+            <br />
             <input type="text" name="title" />
           </div>
           <br />
