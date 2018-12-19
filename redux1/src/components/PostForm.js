@@ -9,6 +9,7 @@ class PostForm extends Component {
     };
 
     this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onChange(e) {
@@ -17,11 +18,19 @@ class PostForm extends Component {
     });
   }
 
+  onSubmit(e) {
+    e.preventDefault();
+    const post = {
+      title: this.state.title,
+      body: this.state.body
+    };
+  }
+
   render() {
     return (
       <div>
         <h1>Add Post</h1>
-        <form>
+        <form onSubmit={this.onSubmit}>
           <div>
             <label>Title: </label>
             <br />
