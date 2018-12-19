@@ -7,7 +7,16 @@ class PostForm extends Component {
       title: "",
       body: ""
     };
+
+    this.onChange = this.onChange.bind(this);
   }
+
+  onChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
   render() {
     return (
       <div>
