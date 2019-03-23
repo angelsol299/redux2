@@ -8,6 +8,7 @@ const tempArr = [
     firstName: "Angel",
     lastName: "Osoria",
     email: "angel@angel.com",
+    age: 24,
     onlineStatus: true
   }
 ];
@@ -19,7 +20,7 @@ class App extends Component {
         <Header />
         <section className="main">
           <Headline
-            header={1}
+            header="Posts"
             desc="Click the button to render the posts"
             tempArr={tempArr}
           />
