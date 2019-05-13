@@ -5,7 +5,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { lat: null, long: null };
+    this.state = { lat: null, long: null, errorMessage: "" };
 
     window.navigator.geolocation.getCurrentPosition(
       position => {
@@ -15,18 +15,26 @@ class App extends React.Component {
           long: position.coords.longitude
         });
       },
-      err => console.log(err)
+      err => {
+        this.setState({ errorMessage: err.message });
+      }
     );
   }
 
   render() {
-    return (
-      <div>
-        <h3>My coordanates are</h3>
-        <div>Latitud: {this.state.lat}</div>
-        <div>Longitude: {this.state.long}</div>
-      </div>
-    );
+    if (this.state.errorMessage && !this.state.lat && !this.state.long) {
+      return <div>Error: {this.state.errorMessage}</div>;
+    }
+    if (this.state.lat && this.state.long) {
+      return (
+        <div>
+          <div>latitude: {this.state.lat}</div>
+          <div>Longitude: {this.state.long}</div>
+        </div>
+      );
+    }
+
+    return <p>Loading</p>;
   }
 }
 
